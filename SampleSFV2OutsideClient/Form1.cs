@@ -1,12 +1,9 @@
 ﻿using EvilMathTeacher.Api;
 using Math.Api;
-using Microsoft.ServiceFabric.Services.Client;
-using Microsoft.ServiceFabric.Services.Remoting;
 using Microsoft.ServiceFabric.Services.Remoting.Client;
 using Microsoft.ServiceFabric.Services.Remoting.FabricTransport;
 using Microsoft.ServiceFabric.Services.Remoting.V2.FabricTransport.Client;
 using System;
-using System.Fabric;
 using System.Threading;
 using System.Windows.Forms;
 namespace SampleSFV2OutsideClient
@@ -40,7 +37,7 @@ namespace SampleSFV2OutsideClient
       int number1 = 10;
       int number2 = 100;
 
-      var uri = new Uri("fabric:/SampleSFV2/EvilMathTeacherService");
+      Uri uri = new Uri("fabric:/SampleSFV2/EvilMathTeacherService");
 
       ServiceProxyFactory proxyFactory = new ServiceProxyFactory((c) =>
       {
